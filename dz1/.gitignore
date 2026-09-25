@@ -4,3 +4,4 @@ bw_probe
 *.o
 *.dSYM/
 .DS_Store
+scripts/__pycache__/
