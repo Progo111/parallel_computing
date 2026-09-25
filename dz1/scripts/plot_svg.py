@@ -25,6 +25,7 @@ import os
 import sys
 from typing import Dict, List, Optional, Sequence, Tuple
 
+sys.dont_write_bytecode = True  # не засорять scripts/ каталогом __pycache__
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from report_table import (  # noqa: E402  (импорт после правки sys.path — так надо)

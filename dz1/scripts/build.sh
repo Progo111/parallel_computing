@@ -12,10 +12,12 @@ cd "$ROOT"
 JOBS="${JOBS:-$(sysctl -n hw.ncpu)}"
 LOG=build/build.log
 
-mkdir -p build asm results/opt-records
-
 echo "==> clean"
 make clean >/dev/null 2>&1 || true
+
+# Каталоги создаются ПОСЛЕ clean: он удаляет build/ целиком, а лог пишется
+# туда же — tee не смог бы открыть файл в несуществующем каталоге.
+mkdir -p build asm results/opt-records
 
 echo "==> compile (make -j$JOBS), log: $LOG"
 set +e
@@ -27,7 +29,8 @@ if [ "$status" -ne 0 ]; then
     exit "$status"
 fi
 
-warn_count=$(grep -c -E 'warning:' "$LOG" || true)
+warn_count=$(grep -c -E 'warning:' "$LOG" 2>/dev/null || true)
+warn_count=${warn_count:-0}
 if [ "$warn_count" -gt 0 ]; then
     echo "!! предупреждений компилятора: $warn_count (ТЗ требует 0)" >&2
     grep -E 'warning:' "$LOG" | head -40 >&2
