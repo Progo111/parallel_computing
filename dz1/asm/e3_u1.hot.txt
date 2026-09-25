@@ -1,0 +1,52 @@
+==== e3_u1 : горячие циклы ====
+
+---- mat_add_e3_u1 ----
+  инструкций в теле: 9; загрузок: 2; записей: 1 (из них non-temporal stnp: 0); prfm: 0
+  векторных fadd/fsub: 1/0; скалярных: 0/0
+  элементов за итерацию: 4; инструкций на элемент: 2.25
+
+    LBB0_3:                                 ; =>This Inner Loop Header: Depth=1
+    	ldr	q0, [x11], #16
+    	ldr	q1, [x10], #16
+    	fadd.4s	v0, v0, v1
+    	str	q0, [x9], #16
+    	add	x13, x12, #4
+    	add	x14, x12, #8
+    	mov	x12, x13
+    	cmp	x14, x8
+    	b.ls	LBB0_3
+
+---- mat_addsub_e3_u1 ----
+  инструкций в теле: 11; загрузок: 2; записей: 2 (из них non-temporal stnp: 0); prfm: 0
+  векторных fadd/fsub: 1/1; скалярных: 0/0
+  элементов за итерацию: 4; инструкций на элемент: 2.75
+
+    LBB2_3:                                 ; =>This Inner Loop Header: Depth=1
+    	ldr	q0, [x12], #16
+    	ldr	q1, [x11], #16
+    	fadd.4s	v2, v0, v1
+    	fsub.4s	v0, v0, v1
+    	str	q2, [x10], #16
+    	str	q0, [x9], #16
+    	add	x14, x13, #4
+    	add	x15, x13, #8
+    	mov	x13, x14
+    	cmp	x15, x8
+    	b.ls	LBB2_3
+
+---- mat_sub_e3_u1 ----
+  инструкций в теле: 9; загрузок: 2; записей: 1 (из них non-temporal stnp: 0); prfm: 0
+  векторных fadd/fsub: 0/1; скалярных: 0/0
+  элементов за итерацию: 4; инструкций на элемент: 2.25
+
+    LBB1_3:                                 ; =>This Inner Loop Header: Depth=1
+    	ldr	q0, [x11], #16
+    	ldr	q1, [x10], #16
+    	fsub.4s	v0, v0, v1
+    	str	q0, [x9], #16
+    	add	x13, x12, #4
+    	add	x14, x12, #8
+    	mov	x12, x13
+    	cmp	x14, x8
+    	b.ls	LBB1_3
+

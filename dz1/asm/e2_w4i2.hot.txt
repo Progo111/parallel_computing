@@ -1,0 +1,57 @@
+==== e2_w4i2 : горячие циклы ====
+
+---- mat_add_e2_w4i2 ----
+  инструкций в теле: 10; загрузок: 2; записей: 1 (из них non-temporal stnp: 0); prfm: 0
+  векторных fadd/fsub: 2/0; скалярных: 0/0
+  элементов за итерацию: 8; инструкций на элемент: 1.25
+
+    LBB0_2:                                 ; =>This Inner Loop Header: Depth=1
+    	ldp	q0, q1, [x10, #-16]
+    	ldp	q2, q3, [x11, #-16]
+    	fadd.4s	v0, v0, v2
+    	fadd.4s	v1, v1, v3
+    	stp	q0, q1, [x12, #-16]
+    	add	x10, x10, #32
+    	add	x11, x11, #32
+    	add	x12, x12, #32
+    	subs	x13, x13, #8
+    	b.ne	LBB0_2
+
+---- mat_addsub_e2_w4i2 ----
+  инструкций в теле: 14; загрузок: 2; записей: 2 (из них non-temporal stnp: 0); prfm: 0
+  векторных fadd/fsub: 2/2; скалярных: 0/0
+  элементов за итерацию: 8; инструкций на элемент: 1.75
+
+    LBB2_2:                                 ; =>This Inner Loop Header: Depth=1
+    	ldp	q0, q1, [x10, #-16]
+    	ldp	q2, q3, [x11, #-16]
+    	fadd.4s	v4, v0, v2
+    	fadd.4s	v5, v1, v3
+    	stp	q4, q5, [x12, #-16]
+    	fsub.4s	v0, v0, v2
+    	fsub.4s	v1, v1, v3
+    	add	x10, x10, #32
+    	stp	q0, q1, [x13, #-16]
+    	add	x11, x11, #32
+    	add	x12, x12, #32
+    	add	x13, x13, #32
+    	subs	x14, x14, #8
+    	b.ne	LBB2_2
+
+---- mat_sub_e2_w4i2 ----
+  инструкций в теле: 10; загрузок: 2; записей: 1 (из них non-temporal stnp: 0); prfm: 0
+  векторных fadd/fsub: 0/2; скалярных: 0/0
+  элементов за итерацию: 8; инструкций на элемент: 1.25
+
+    LBB1_2:                                 ; =>This Inner Loop Header: Depth=1
+    	ldp	q0, q1, [x10, #-16]
+    	ldp	q2, q3, [x11, #-16]
+    	fsub.4s	v0, v0, v2
+    	fsub.4s	v1, v1, v3
+    	stp	q0, q1, [x12, #-16]
+    	add	x10, x10, #32
+    	add	x11, x11, #32
+    	add	x12, x12, #32
+    	subs	x13, x13, #8
+    	b.ne	LBB1_2
+

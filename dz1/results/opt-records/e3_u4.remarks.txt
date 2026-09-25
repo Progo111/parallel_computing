@@ -1,0 +1,27 @@
+src/kernel_e3.c:83:48: remark: loop not vectorized: instruction return type cannot be vectorized [-Rpass-analysis=loop-vectorize]
+   83 |         for (int u = 0; u < UNROLL; ++u) va[u] = vld1q_f32(ap + k + 4 * (size_t)u);
+      |                                                ^
+src/kernel_e3.c:79:5: remark: loop not vectorized [-Rpass-missed=loop-vectorize]
+   79 |     for (; k + BLOCK <= total; k += BLOCK) {
+      |     ^
+src/kernel_e3.c:92:5: remark: loop not vectorized: vectorization and interleaving are explicitly disabled, or the loop has already been vectorized [-Rpass-analysis=loop-vectorize]
+   92 |     for (; k < total; ++k) cp[k] = ap[k] + bp[k];
+      |     ^
+src/kernel_e3.c:109:48: remark: loop not vectorized: instruction return type cannot be vectorized [-Rpass-analysis=loop-vectorize]
+  109 |         for (int u = 0; u < UNROLL; ++u) va[u] = vld1q_f32(ap + k + 4 * (size_t)u);
+      |                                                ^
+src/kernel_e3.c:106:5: remark: loop not vectorized [-Rpass-missed=loop-vectorize]
+  106 |     for (; k + BLOCK <= total; k += BLOCK) {
+      |     ^
+src/kernel_e3.c:116:5: remark: loop not vectorized: vectorization and interleaving are explicitly disabled, or the loop has already been vectorized [-Rpass-analysis=loop-vectorize]
+  116 |     for (; k < total; ++k) cp[k] = ap[k] - bp[k];
+      |     ^
+src/kernel_e3.c:138:48: remark: loop not vectorized: instruction return type cannot be vectorized [-Rpass-analysis=loop-vectorize]
+  138 |         for (int u = 0; u < UNROLL; ++u) va[u] = vld1q_f32(ap + k + 4 * (size_t)u);
+      |                                                ^
+src/kernel_e3.c:134:5: remark: loop not vectorized [-Rpass-missed=loop-vectorize]
+  134 |     for (; k + BLOCK <= total; k += BLOCK) {
+      |     ^
+src/kernel_e3.c:149:5: remark: loop not vectorized: vectorization and interleaving are explicitly disabled, or the loop has already been vectorized [-Rpass-analysis=loop-vectorize]
+  149 |     for (; k < total; ++k) {
+      |     ^

@@ -1,0 +1,43 @@
+==== e2_w4i1 : горячие циклы ====
+
+---- mat_add_e2_w4i1 ----
+  инструкций в теле: 6; загрузок: 2; записей: 1 (из них non-temporal stnp: 0); prfm: 0
+  векторных fadd/fsub: 1/0; скалярных: 0/0
+  элементов за итерацию: 4; инструкций на элемент: 1.50
+
+    LBB0_2:                                 ; =>This Inner Loop Header: Depth=1
+    	ldr	q0, [x13], #16
+    	ldr	q1, [x12], #16
+    	fadd.4s	v0, v0, v1
+    	str	q0, [x11], #16
+    	subs	x10, x10, #4
+    	b.ne	LBB0_2
+
+---- mat_addsub_e2_w4i1 ----
+  инструкций в теле: 8; загрузок: 2; записей: 2 (из них non-temporal stnp: 0); prfm: 0
+  векторных fadd/fsub: 1/1; скалярных: 0/0
+  элементов за итерацию: 4; инструкций на элемент: 2.00
+
+    LBB2_2:                                 ; =>This Inner Loop Header: Depth=1
+    	ldr	q0, [x14], #16
+    	ldr	q1, [x13], #16
+    	fadd.4s	v2, v0, v1
+    	str	q2, [x12], #16
+    	fsub.4s	v0, v0, v1
+    	str	q0, [x11], #16
+    	subs	x10, x10, #4
+    	b.ne	LBB2_2
+
+---- mat_sub_e2_w4i1 ----
+  инструкций в теле: 6; загрузок: 2; записей: 1 (из них non-temporal stnp: 0); prfm: 0
+  векторных fadd/fsub: 0/1; скалярных: 0/0
+  элементов за итерацию: 4; инструкций на элемент: 1.50
+
+    LBB1_2:                                 ; =>This Inner Loop Header: Depth=1
+    	ldr	q0, [x13], #16
+    	ldr	q1, [x12], #16
+    	fsub.4s	v0, v0, v1
+    	str	q0, [x11], #16
+    	subs	x10, x10, #4
+    	b.ne	LBB1_2
+

@@ -1,0 +1,1056 @@
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 141, Column: 52 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          ''''
+  - Callee:          vaddq_f32
+  - String:          ''' inlined into '''
+  - Caller:          mat_addsub_e3_u4
+    DebugLoc:        { File: 'src/kernel_e3.c', Line: 125, Column: 0 }
+  - String:          ''''
+  - String:          ' with '
+  - String:          '(cost=always)'
+  - String:          ': '
+  - Reason:          always inline attribute
+  - String:          ' at callsite '
+  - String:          mat_addsub_e3_u4
+  - String:          ':'
+  - Line:            '18'
+  - String:          ':'
+  - Column:          '52'
+  - String:          ';'
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 86, Column: 50 }
+Function:        mat_add_e3_u4
+Args:
+  - String:          ''''
+  - Callee:          vaddq_f32
+  - String:          ''' inlined into '''
+  - Caller:          mat_add_e3_u4
+    DebugLoc:        { File: 'src/kernel_e3.c', Line: 71, Column: 0 }
+  - String:          ''''
+  - String:          ' with '
+  - String:          '(cost=always)'
+  - String:          ': '
+  - Reason:          always inline attribute
+  - String:          ' at callsite '
+  - String:          mat_add_e3_u4
+  - String:          ':'
+  - Line:            '17'
+  - String:          ':'
+  - Column:          '50'
+  - String:          ';'
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 142, Column: 52 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          ''''
+  - Callee:          vsubq_f32
+  - String:          ''' inlined into '''
+  - Caller:          mat_addsub_e3_u4
+    DebugLoc:        { File: 'src/kernel_e3.c', Line: 125, Column: 0 }
+  - String:          ''''
+  - String:          ' with '
+  - String:          '(cost=always)'
+  - String:          ': '
+  - Reason:          always inline attribute
+  - String:          ' at callsite '
+  - String:          mat_addsub_e3_u4
+  - String:          ':'
+  - Line:            '19'
+  - String:          ':'
+  - Column:          '52'
+  - String:          ';'
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 111, Column: 50 }
+Function:        mat_sub_e3_u4
+Args:
+  - String:          ''''
+  - Callee:          vsubq_f32
+  - String:          ''' inlined into '''
+  - Caller:          mat_sub_e3_u4
+    DebugLoc:        { File: 'src/kernel_e3.c', Line: 98, Column: 0 }
+  - String:          ''''
+  - String:          ' with '
+  - String:          '(cost=always)'
+  - String:          ': '
+  - Reason:          always inline attribute
+  - String:          ' at callsite '
+  - String:          mat_sub_e3_u4
+  - String:          ':'
+  - Line:            '15'
+  - String:          ':'
+  - Column:          '50'
+  - String:          ';'
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 83, Column: 50 }
+Function:        mat_add_e3_u4
+Args:
+  - String:          'hoisting '
+  - Inst:            getelementptr
+    DebugLoc:        { File: 'src/kernel_e3.c', Line: 83, Column: 50 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 84, Column: 50 }
+Function:        mat_add_e3_u4
+Args:
+  - String:          'hoisting '
+  - Inst:            getelementptr
+    DebugLoc:        { File: 'src/kernel_e3.c', Line: 84, Column: 50 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 88, Column: 42 }
+Function:        mat_add_e3_u4
+Args:
+  - String:          'hoisting '
+  - Inst:            getelementptr
+    DebugLoc:        { File: 'src/kernel_e3.c', Line: 88, Column: 42 }
+...
+--- !Passed
+Pass:            loop-idiom
+Name:            ProcessLoopStoreOfLoopLoad
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 83, Column: 48 }
+Function:        mat_add_e3_u4
+Args:
+  - String:          'Formed a call to '
+  - NewFunction:     llvm.memcpy.p0.p0.i64
+  - String:          '() intrinsic from '
+  - Inst:            load and store
+  - String:          ' instruction in '
+  - Function:        mat_add_e3_u4
+    DebugLoc:        { File: 'src/kernel_e3.c', Line: 71, Column: 0 }
+  - String:          ' function'
+  - FromBlock:       ''
+  - ToBlock:         ''
+...
+--- !Passed
+Pass:            loop-delete
+Name:            Invariant
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 83, Column: 9 }
+Function:        mat_add_e3_u4
+Args:
+  - String:          Loop deleted because it is invariant
+...
+--- !Passed
+Pass:            loop-idiom
+Name:            ProcessLoopStoreOfLoopLoad
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 84, Column: 48 }
+Function:        mat_add_e3_u4
+Args:
+  - String:          'Formed a call to '
+  - NewFunction:     llvm.memcpy.p0.p0.i64
+  - String:          '() intrinsic from '
+  - Inst:            load and store
+  - String:          ' instruction in '
+  - Function:        mat_add_e3_u4
+    DebugLoc:        { File: 'src/kernel_e3.c', Line: 71, Column: 0 }
+  - String:          ' function'
+  - FromBlock:       ''
+  - ToBlock:         ''
+...
+--- !Passed
+Pass:            loop-delete
+Name:            Invariant
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 84, Column: 9 }
+Function:        mat_add_e3_u4
+Args:
+  - String:          Loop deleted because it is invariant
+...
+--- !Passed
+Pass:            loop-unroll
+Name:            FullyUnrolled
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 86, Column: 9 }
+Function:        mat_add_e3_u4
+Args:
+  - String:          'completely unrolled loop with '
+  - UnrollCount:     '4'
+  - String:          ' iterations'
+...
+--- !Passed
+Pass:            loop-idiom
+Name:            ProcessLoopStoreOfLoopLoad
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 88, Column: 42 }
+Function:        mat_add_e3_u4
+Args:
+  - String:          'Formed a call to '
+  - NewFunction:     llvm.memcpy.p0.p0.i64
+  - String:          '() intrinsic from '
+  - Inst:            load and store
+  - String:          ' instruction in '
+  - Function:        mat_add_e3_u4
+    DebugLoc:        { File: 'src/kernel_e3.c', Line: 71, Column: 0 }
+  - String:          ' function'
+  - FromBlock:       ''
+  - ToBlock:         ''
+...
+--- !Passed
+Pass:            loop-delete
+Name:            Invariant
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 88, Column: 9 }
+Function:        mat_add_e3_u4
+Args:
+  - String:          Loop deleted because it is invariant
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 109, Column: 50 }
+Function:        mat_sub_e3_u4
+Args:
+  - String:          'hoisting '
+  - Inst:            getelementptr
+    DebugLoc:        { File: 'src/kernel_e3.c', Line: 109, Column: 50 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 110, Column: 50 }
+Function:        mat_sub_e3_u4
+Args:
+  - String:          'hoisting '
+  - Inst:            getelementptr
+    DebugLoc:        { File: 'src/kernel_e3.c', Line: 110, Column: 50 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 112, Column: 42 }
+Function:        mat_sub_e3_u4
+Args:
+  - String:          'hoisting '
+  - Inst:            getelementptr
+    DebugLoc:        { File: 'src/kernel_e3.c', Line: 112, Column: 42 }
+...
+--- !Passed
+Pass:            loop-idiom
+Name:            ProcessLoopStoreOfLoopLoad
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 109, Column: 48 }
+Function:        mat_sub_e3_u4
+Args:
+  - String:          'Formed a call to '
+  - NewFunction:     llvm.memcpy.p0.p0.i64
+  - String:          '() intrinsic from '
+  - Inst:            load and store
+  - String:          ' instruction in '
+  - Function:        mat_sub_e3_u4
+    DebugLoc:        { File: 'src/kernel_e3.c', Line: 98, Column: 0 }
+  - String:          ' function'
+  - FromBlock:       ''
+  - ToBlock:         ''
+...
+--- !Passed
+Pass:            loop-delete
+Name:            Invariant
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 109, Column: 9 }
+Function:        mat_sub_e3_u4
+Args:
+  - String:          Loop deleted because it is invariant
+...
+--- !Passed
+Pass:            loop-idiom
+Name:            ProcessLoopStoreOfLoopLoad
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 110, Column: 48 }
+Function:        mat_sub_e3_u4
+Args:
+  - String:          'Formed a call to '
+  - NewFunction:     llvm.memcpy.p0.p0.i64
+  - String:          '() intrinsic from '
+  - Inst:            load and store
+  - String:          ' instruction in '
+  - Function:        mat_sub_e3_u4
+    DebugLoc:        { File: 'src/kernel_e3.c', Line: 98, Column: 0 }
+  - String:          ' function'
+  - FromBlock:       ''
+  - ToBlock:         ''
+...
+--- !Passed
+Pass:            loop-delete
+Name:            Invariant
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 110, Column: 9 }
+Function:        mat_sub_e3_u4
+Args:
+  - String:          Loop deleted because it is invariant
+...
+--- !Passed
+Pass:            loop-unroll
+Name:            FullyUnrolled
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 111, Column: 9 }
+Function:        mat_sub_e3_u4
+Args:
+  - String:          'completely unrolled loop with '
+  - UnrollCount:     '4'
+  - String:          ' iterations'
+...
+--- !Passed
+Pass:            loop-idiom
+Name:            ProcessLoopStoreOfLoopLoad
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 112, Column: 42 }
+Function:        mat_sub_e3_u4
+Args:
+  - String:          'Formed a call to '
+  - NewFunction:     llvm.memcpy.p0.p0.i64
+  - String:          '() intrinsic from '
+  - Inst:            load and store
+  - String:          ' instruction in '
+  - Function:        mat_sub_e3_u4
+    DebugLoc:        { File: 'src/kernel_e3.c', Line: 98, Column: 0 }
+  - String:          ' function'
+  - FromBlock:       ''
+  - ToBlock:         ''
+...
+--- !Passed
+Pass:            loop-delete
+Name:            Invariant
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 112, Column: 9 }
+Function:        mat_sub_e3_u4
+Args:
+  - String:          Loop deleted because it is invariant
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 138, Column: 50 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          'hoisting '
+  - Inst:            getelementptr
+    DebugLoc:        { File: 'src/kernel_e3.c', Line: 138, Column: 50 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 139, Column: 50 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          'hoisting '
+  - Inst:            getelementptr
+    DebugLoc:        { File: 'src/kernel_e3.c', Line: 139, Column: 50 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 144, Column: 42 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          'hoisting '
+  - Inst:            getelementptr
+    DebugLoc:        { File: 'src/kernel_e3.c', Line: 144, Column: 42 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 145, Column: 42 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          'hoisting '
+  - Inst:            getelementptr
+    DebugLoc:        { File: 'src/kernel_e3.c', Line: 145, Column: 42 }
+...
+--- !Passed
+Pass:            loop-idiom
+Name:            ProcessLoopStoreOfLoopLoad
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 138, Column: 48 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          'Formed a call to '
+  - NewFunction:     llvm.memcpy.p0.p0.i64
+  - String:          '() intrinsic from '
+  - Inst:            load and store
+  - String:          ' instruction in '
+  - Function:        mat_addsub_e3_u4
+    DebugLoc:        { File: 'src/kernel_e3.c', Line: 125, Column: 0 }
+  - String:          ' function'
+  - FromBlock:       ''
+  - ToBlock:         ''
+...
+--- !Passed
+Pass:            loop-delete
+Name:            Invariant
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 138, Column: 9 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          Loop deleted because it is invariant
+...
+--- !Passed
+Pass:            loop-idiom
+Name:            ProcessLoopStoreOfLoopLoad
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 139, Column: 48 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          'Formed a call to '
+  - NewFunction:     llvm.memcpy.p0.p0.i64
+  - String:          '() intrinsic from '
+  - Inst:            load and store
+  - String:          ' instruction in '
+  - Function:        mat_addsub_e3_u4
+    DebugLoc:        { File: 'src/kernel_e3.c', Line: 125, Column: 0 }
+  - String:          ' function'
+  - FromBlock:       ''
+  - ToBlock:         ''
+...
+--- !Passed
+Pass:            loop-delete
+Name:            Invariant
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 139, Column: 9 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          Loop deleted because it is invariant
+...
+--- !Passed
+Pass:            loop-unroll
+Name:            FullyUnrolled
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 141, Column: 9 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          'completely unrolled loop with '
+  - UnrollCount:     '4'
+  - String:          ' iterations'
+...
+--- !Passed
+Pass:            loop-unroll
+Name:            FullyUnrolled
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 142, Column: 9 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          'completely unrolled loop with '
+  - UnrollCount:     '4'
+  - String:          ' iterations'
+...
+--- !Passed
+Pass:            loop-idiom
+Name:            ProcessLoopStoreOfLoopLoad
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 144, Column: 42 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          'Formed a call to '
+  - NewFunction:     llvm.memcpy.p0.p0.i64
+  - String:          '() intrinsic from '
+  - Inst:            load and store
+  - String:          ' instruction in '
+  - Function:        mat_addsub_e3_u4
+    DebugLoc:        { File: 'src/kernel_e3.c', Line: 125, Column: 0 }
+  - String:          ' function'
+  - FromBlock:       ''
+  - ToBlock:         ''
+...
+--- !Passed
+Pass:            loop-delete
+Name:            Invariant
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 144, Column: 9 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          Loop deleted because it is invariant
+...
+--- !Passed
+Pass:            loop-idiom
+Name:            ProcessLoopStoreOfLoopLoad
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 145, Column: 42 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          'Formed a call to '
+  - NewFunction:     llvm.memcpy.p0.p0.i64
+  - String:          '() intrinsic from '
+  - Inst:            load and store
+  - String:          ' instruction in '
+  - Function:        mat_addsub_e3_u4
+    DebugLoc:        { File: 'src/kernel_e3.c', Line: 125, Column: 0 }
+  - String:          ' function'
+  - FromBlock:       ''
+  - ToBlock:         ''
+...
+--- !Passed
+Pass:            loop-delete
+Name:            Invariant
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 145, Column: 9 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          Loop deleted because it is invariant
+...
+--- !Analysis
+Pass:            loop-vectorize
+Name:            CantVectorizeInstructionReturnType
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 83, Column: 48 }
+Function:        mat_add_e3_u4
+Args:
+  - String:          'loop not vectorized: '
+  - String:          instruction return type cannot be vectorized
+...
+--- !Missed
+Pass:            loop-vectorize
+Name:            MissedDetails
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 79, Column: 5 }
+Function:        mat_add_e3_u4
+Args:
+  - String:          loop not vectorized
+...
+--- !Analysis
+Pass:            loop-vectorize
+Name:            AllDisabled
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 92, Column: 5 }
+Function:        mat_add_e3_u4
+Args:
+  - String:          'loop not vectorized: vectorization and interleaving are explicitly disabled, or the loop has already been vectorized'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 92, Column: 36 }
+Function:        mat_add_e3_u4
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+Function:        mat_add_e3_u4
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Analysis
+Pass:            loop-vectorize
+Name:            CantVectorizeInstructionReturnType
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 109, Column: 48 }
+Function:        mat_sub_e3_u4
+Args:
+  - String:          'loop not vectorized: '
+  - String:          instruction return type cannot be vectorized
+...
+--- !Missed
+Pass:            loop-vectorize
+Name:            MissedDetails
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 106, Column: 5 }
+Function:        mat_sub_e3_u4
+Args:
+  - String:          loop not vectorized
+...
+--- !Analysis
+Pass:            loop-vectorize
+Name:            AllDisabled
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 116, Column: 5 }
+Function:        mat_sub_e3_u4
+Args:
+  - String:          'loop not vectorized: vectorization and interleaving are explicitly disabled, or the loop has already been vectorized'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 116, Column: 36 }
+Function:        mat_sub_e3_u4
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+Function:        mat_sub_e3_u4
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Analysis
+Pass:            loop-vectorize
+Name:            CantVectorizeInstructionReturnType
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 138, Column: 48 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          'loop not vectorized: '
+  - String:          instruction return type cannot be vectorized
+...
+--- !Missed
+Pass:            loop-vectorize
+Name:            MissedDetails
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 134, Column: 5 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          loop not vectorized
+...
+--- !Analysis
+Pass:            loop-vectorize
+Name:            AllDisabled
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 149, Column: 5 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          'loop not vectorized: vectorization and interleaving are explicitly disabled, or the loop has already been vectorized'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 150, Column: 27 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 150, Column: 27 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            regalloc
+Name:            SpillReloadCopies
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 69, Column: 1 }
+Function:        mat_add_e3_u4
+Args:
+  - NumVRCopies:     '1'
+  - String:          ' virtual registers copies '
+  - TotalCopiesCost: '5.000000e-01'
+  - String:          ' total copies cost '
+  - String:          generated in function
+...
+--- !Analysis
+Pass:            prologepilog
+Name:            StackSize
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 71, Column: 0 }
+Function:        mat_add_e3_u4
+Args:
+  - NumStackBytes:   '0'
+  - String:          ' stack bytes in function '''
+  - Function:        mat_add_e3_u4
+  - String:          ''''
+...
+--- !Missed
+Pass:            regalloc
+Name:            SpillReloadCopies
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 96, Column: 1 }
+Function:        mat_sub_e3_u4
+Args:
+  - NumVRCopies:     '1'
+  - String:          ' virtual registers copies '
+  - TotalCopiesCost: '5.000000e-01'
+  - String:          ' total copies cost '
+  - String:          generated in function
+...
+--- !Analysis
+Pass:            prologepilog
+Name:            StackSize
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 98, Column: 0 }
+Function:        mat_sub_e3_u4
+Args:
+  - NumStackBytes:   '0'
+  - String:          ' stack bytes in function '''
+  - Function:        mat_sub_e3_u4
+  - String:          ''''
+...
+--- !Missed
+Pass:            regalloc
+Name:            SpillReloadCopies
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 123, Column: 1 }
+Function:        mat_addsub_e3_u4
+Args:
+  - NumVRCopies:     '1'
+  - String:          ' virtual registers copies '
+  - TotalCopiesCost: '5.000000e-01'
+  - String:          ' total copies cost '
+  - String:          generated in function
+...
+--- !Analysis
+Pass:            prologepilog
+Name:            StackSize
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 125, Column: 0 }
+Function:        mat_addsub_e3_u4
+Args:
+  - NumStackBytes:   '0'
+  - String:          ' stack bytes in function '''
+  - Function:        mat_addsub_e3_u4
+  - String:          ''''
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 76, Column: 28 }
+Function:        mat_add_e3_u4
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_add_e3_u4
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '4'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 79, Column: 5 }
+Function:        mat_add_e3_u4
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '4'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 83, Column: 48 }
+Function:        mat_add_e3_u4
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '13'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 92, Column: 14 }
+Function:        mat_add_e3_u4
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 92, Column: 5 }
+Function:        mat_add_e3_u4
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '4'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 92, Column: 36 }
+Function:        mat_add_e3_u4
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '6'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 93, Column: 1 }
+Function:        mat_add_e3_u4
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionCount
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 71, Column: 0 }
+Function:        mat_add_e3_u4
+Args:
+  - NumInstructions: '38'
+  - String:          ' instructions in function'
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 103, Column: 28 }
+Function:        mat_sub_e3_u4
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_sub_e3_u4
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '4'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 106, Column: 5 }
+Function:        mat_sub_e3_u4
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '4'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 109, Column: 48 }
+Function:        mat_sub_e3_u4
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '13'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 116, Column: 14 }
+Function:        mat_sub_e3_u4
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 116, Column: 5 }
+Function:        mat_sub_e3_u4
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '4'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 116, Column: 36 }
+Function:        mat_sub_e3_u4
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '6'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 117, Column: 1 }
+Function:        mat_sub_e3_u4
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionCount
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 98, Column: 0 }
+Function:        mat_sub_e3_u4
+Args:
+  - NumInstructions: '38'
+  - String:          ' instructions in function'
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 131, Column: 28 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '4'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 134, Column: 5 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '5'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 138, Column: 48 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '19'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 149, Column: 14 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 149, Column: 5 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '5'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 150, Column: 27 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '8'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 155, Column: 1 }
+Function:        mat_addsub_e3_u4
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionCount
+DebugLoc:        { File: 'src/kernel_e3.c', Line: 125, Column: 0 }
+Function:        mat_addsub_e3_u4
+Args:
+  - NumInstructions: '48'
+  - String:          ' instructions in function'
+...

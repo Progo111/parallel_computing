@@ -1,0 +1,27 @@
+src/kernel_e4.c:120:32: remark: loop not vectorized: instruction return type cannot be vectorized [-Rpass-analysis=loop-vectorize]
+  120 |         const float32x4_t a0 = vld1q_f32(ap + k + 0);
+      |                                ^
+src/kernel_e4.c:116:5: remark: loop not vectorized [-Rpass-missed=loop-vectorize]
+  116 |     for (; k + BLOCK <= total; k += BLOCK) {
+      |     ^
+src/kernel_e4.c:139:5: remark: loop not vectorized: vectorization and interleaving are explicitly disabled, or the loop has already been vectorized [-Rpass-analysis=loop-vectorize]
+  139 |     for (; k < total; ++k) cp[k] = ap[k] + bp[k];
+      |     ^
+src/kernel_e4.c:156:32: remark: loop not vectorized: instruction return type cannot be vectorized [-Rpass-analysis=loop-vectorize]
+  156 |         const float32x4_t a0 = vld1q_f32(ap + k + 0);
+      |                                ^
+src/kernel_e4.c:153:5: remark: loop not vectorized [-Rpass-missed=loop-vectorize]
+  153 |     for (; k + BLOCK <= total; k += BLOCK) {
+      |     ^
+src/kernel_e4.c:175:5: remark: loop not vectorized: vectorization and interleaving are explicitly disabled, or the loop has already been vectorized [-Rpass-analysis=loop-vectorize]
+  175 |     for (; k < total; ++k) cp[k] = ap[k] - bp[k];
+      |     ^
+src/kernel_e4.c:196:32: remark: loop not vectorized: instruction return type cannot be vectorized [-Rpass-analysis=loop-vectorize]
+  196 |         const float32x4_t a0 = vld1q_f32(ap + k + 0);
+      |                                ^
+src/kernel_e4.c:192:5: remark: loop not vectorized [-Rpass-missed=loop-vectorize]
+  192 |     for (; k + BLOCK <= total; k += BLOCK) {
+      |     ^
+src/kernel_e4.c:221:5: remark: loop not vectorized: vectorization and interleaving are explicitly disabled, or the loop has already been vectorized [-Rpass-analysis=loop-vectorize]
+  221 |     for (; k < total; ++k) {
+      |     ^

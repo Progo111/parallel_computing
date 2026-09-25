@@ -1,0 +1,1995 @@
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 41, Column: 32 }
+Function:        mat_add_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 41, Column: 32 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 52, Column: 32 }
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 52, Column: 32 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 66, Column: 35 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            mul
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 66, Column: 35 }
+...
+--- !Passed
+Pass:            loop-vectorize
+Name:            Vectorized
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 40, Column: 9 }
+Function:        mat_add_e1_O3
+Args:
+  - String:          'vectorized '
+  - String:          ''
+  - String:          'loop (vectorization width: '
+  - VectorizationFactor: '4'
+  - String:          ', interleaved count: '
+  - InterleaveCount: '4'
+  - String:          ')'
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 40, Column: 9 }
+Function:        mat_add_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 40, Column: 9 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 40, Column: 9 }
+Function:        mat_add_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 40, Column: 9 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 40, Column: 9 }
+Function:        mat_add_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 40, Column: 9 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 40, Column: 9 }
+Function:        mat_add_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            or
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 40, Column: 9 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 40, Column: 9 }
+Function:        mat_add_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            and
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 40, Column: 9 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 40, Column: 9 }
+Function:        mat_add_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 40, Column: 9 }
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 41, Column: 28 }
+Function:        mat_add_e1_O3
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 41, Column: 28 }
+Function:        mat_add_e1_O3
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 41, Column: 28 }
+Function:        mat_add_e1_O3
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+Function:        mat_add_e1_O3
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 39, Column: 26 }
+Function:        mat_add_e1_O3
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 39, Column: 26 }
+Function:        mat_add_e1_O3
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+Function:        mat_add_e1_O3
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+Function:        mat_add_e1_O3
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Passed
+Pass:            loop-vectorize
+Name:            Vectorized
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 51, Column: 9 }
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'vectorized '
+  - String:          ''
+  - String:          'loop (vectorization width: '
+  - VectorizationFactor: '4'
+  - String:          ', interleaved count: '
+  - InterleaveCount: '4'
+  - String:          ')'
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 51, Column: 9 }
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 51, Column: 9 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 51, Column: 9 }
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 51, Column: 9 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 51, Column: 9 }
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 51, Column: 9 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 51, Column: 9 }
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            or
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 51, Column: 9 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 51, Column: 9 }
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            and
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 51, Column: 9 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 51, Column: 9 }
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 51, Column: 9 }
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 52, Column: 28 }
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 52, Column: 28 }
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 52, Column: 28 }
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 50, Column: 26 }
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 50, Column: 26 }
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Passed
+Pass:            loop-vectorize
+Name:            Vectorized
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 9 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'vectorized '
+  - String:          ''
+  - String:          'loop (vectorization width: '
+  - VectorizationFactor: '4'
+  - String:          ', interleaved count: '
+  - InterleaveCount: '2'
+  - String:          ')'
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 9 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 9 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 9 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 9 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 9 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 9 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 9 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            or
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 9 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 9 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 9 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 9 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            or
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 9 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 9 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 9 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 9 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            or
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 9 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 9 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 9 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 9 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            or
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 9 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 9 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            and
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 9 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 9 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 9 }
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 66, Column: 31 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 66, Column: 31 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 66, Column: 31 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 66, Column: 31 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 66, Column: 31 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 66, Column: 31 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            HorSLPNotBeneficial
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'Vectorizing horizontal reduction is possible '
+  - String:          'but not beneficial with cost '
+  - Cost:            '9'
+  - String:          ' and threshold '
+  - Threshold:       '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            HorSLPNotBeneficial
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'Vectorizing horizontal reduction is possible '
+  - String:          'but not beneficial with cost '
+  - Cost:            '8'
+  - String:          ' and threshold '
+  - Threshold:       '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 64, Column: 26 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 64, Column: 26 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 64, Column: 26 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 64, Column: 26 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotPossible
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 64, Column: 26 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'Cannot SLP vectorize list: vectorization was impossible'
+  - String:          ' with available vectorization factors'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Missed
+Pass:            slp-vectorizer
+Name:            NotBeneficial
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'List vectorization was possible but not beneficial with cost '
+  - Cost:            '0'
+  - String:          ' >= '
+  - Treshold:        '0'
+...
+--- !Passed
+Pass:            loop-unroll
+Name:            FullyUnrolled
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 9 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'completely unrolled loop with '
+  - UnrollCount:     '7'
+  - String:          ' iterations'
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 30 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 30 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 30 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 30 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 30 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 30 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 30 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 30 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 30 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 30 }
+...
+--- !Passed
+Pass:            licm
+Name:            Hoisted
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 30 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'hoisting '
+  - Inst:            icmp
+    DebugLoc:        { File: 'src/kernel_e0.c', Line: 65, Column: 30 }
+...
+--- !Missed
+Pass:            regalloc
+Name:            LoopSpillReloadCopies
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 39, Column: 5 }
+Function:        mat_add_e1_O3
+Args:
+  - NumVRCopies:     '1'
+  - String:          ' virtual registers copies '
+  - TotalCopiesCost: '1.000000e+01'
+  - String:          ' total copies cost '
+  - String:          generated in loop
+...
+--- !Missed
+Pass:            regalloc
+Name:            LoopSpillReloadCopies
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 39, Column: 5 }
+Function:        mat_add_e1_O3
+Args:
+  - NumVRCopies:     '1'
+  - String:          ' virtual registers copies '
+  - TotalCopiesCost: '5.000000e+00'
+  - String:          ' total copies cost '
+  - String:          generated in loop
+...
+--- !Missed
+Pass:            regalloc
+Name:            LoopSpillReloadCopies
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 39, Column: 5 }
+Function:        mat_add_e1_O3
+Args:
+  - NumVRCopies:     '4'
+  - String:          ' virtual registers copies '
+  - TotalCopiesCost: '1.000000e+01'
+  - String:          ' total copies cost '
+  - String:          generated in loop
+...
+--- !Missed
+Pass:            regalloc
+Name:            LoopSpillReloadCopies
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 39, Column: 5 }
+Function:        mat_add_e1_O3
+Args:
+  - NumVRCopies:     '5'
+  - String:          ' virtual registers copies '
+  - TotalCopiesCost: '1.250000e+01'
+  - String:          ' total copies cost '
+  - String:          generated in loop
+...
+--- !Missed
+Pass:            regalloc
+Name:            SpillReloadCopies
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 36, Column: 1 }
+Function:        mat_add_e1_O3
+Args:
+  - NumVRCopies:     '15'
+  - String:          ' virtual registers copies '
+  - TotalCopiesCost: '3.812500e+01'
+  - String:          ' total copies cost '
+  - String:          generated in function
+...
+--- !Analysis
+Pass:            prologepilog
+Name:            StackSize
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 38, Column: 0 }
+Function:        mat_add_e1_O3
+Args:
+  - NumStackBytes:   '0'
+  - String:          ' stack bytes in function '''
+  - Function:        mat_add_e1_O3
+  - String:          ''''
+...
+--- !Missed
+Pass:            regalloc
+Name:            LoopSpillReloadCopies
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 50, Column: 5 }
+Function:        mat_sub_e1_O3
+Args:
+  - NumVRCopies:     '1'
+  - String:          ' virtual registers copies '
+  - TotalCopiesCost: '1.000000e+01'
+  - String:          ' total copies cost '
+  - String:          generated in loop
+...
+--- !Missed
+Pass:            regalloc
+Name:            LoopSpillReloadCopies
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 50, Column: 5 }
+Function:        mat_sub_e1_O3
+Args:
+  - NumVRCopies:     '1'
+  - String:          ' virtual registers copies '
+  - TotalCopiesCost: '5.000000e+00'
+  - String:          ' total copies cost '
+  - String:          generated in loop
+...
+--- !Missed
+Pass:            regalloc
+Name:            LoopSpillReloadCopies
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 50, Column: 5 }
+Function:        mat_sub_e1_O3
+Args:
+  - NumVRCopies:     '4'
+  - String:          ' virtual registers copies '
+  - TotalCopiesCost: '1.000000e+01'
+  - String:          ' total copies cost '
+  - String:          generated in loop
+...
+--- !Missed
+Pass:            regalloc
+Name:            LoopSpillReloadCopies
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 50, Column: 5 }
+Function:        mat_sub_e1_O3
+Args:
+  - NumVRCopies:     '5'
+  - String:          ' virtual registers copies '
+  - TotalCopiesCost: '1.250000e+01'
+  - String:          ' total copies cost '
+  - String:          generated in loop
+...
+--- !Missed
+Pass:            regalloc
+Name:            SpillReloadCopies
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 47, Column: 1 }
+Function:        mat_sub_e1_O3
+Args:
+  - NumVRCopies:     '15'
+  - String:          ' virtual registers copies '
+  - TotalCopiesCost: '3.812500e+01'
+  - String:          ' total copies cost '
+  - String:          generated in function
+...
+--- !Analysis
+Pass:            prologepilog
+Name:            StackSize
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 49, Column: 0 }
+Function:        mat_sub_e1_O3
+Args:
+  - NumStackBytes:   '0'
+  - String:          ' stack bytes in function '''
+  - Function:        mat_sub_e1_O3
+  - String:          ''''
+...
+--- !Missed
+Pass:            regalloc
+Name:            LoopSpillReloadCopies
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 64, Column: 5 }
+Function:        mat_addsub_e1_O3
+Args:
+  - NumVRCopies:     '1'
+  - String:          ' virtual registers copies '
+  - TotalCopiesCost: '5.000000e+00'
+  - String:          ' total copies cost '
+  - String:          generated in loop
+...
+--- !Missed
+Pass:            regalloc
+Name:            LoopSpillReloadCopies
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 64, Column: 5 }
+Function:        mat_addsub_e1_O3
+Args:
+  - NumVRCopies:     '5'
+  - String:          ' virtual registers copies '
+  - TotalCopiesCost: '1.250000e+01'
+  - String:          ' total copies cost '
+  - String:          generated in loop
+...
+--- !Missed
+Pass:            regalloc
+Name:            LoopSpillReloadCopies
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 64, Column: 5 }
+Function:        mat_addsub_e1_O3
+Args:
+  - NumVRCopies:     '6'
+  - String:          ' virtual registers copies '
+  - TotalCopiesCost: '1.500000e+01'
+  - String:          ' total copies cost '
+  - String:          generated in loop
+...
+--- !Missed
+Pass:            regalloc
+Name:            SpillReloadCopies
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 61, Column: 1 }
+Function:        mat_addsub_e1_O3
+Args:
+  - NumVRCopies:     '16'
+  - String:          ' virtual registers copies '
+  - TotalCopiesCost: '3.312500e+01'
+  - String:          ' total copies cost '
+  - String:          generated in function
+...
+--- !Analysis
+Pass:            prologepilog
+Name:            StackSize
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 63, Column: 0 }
+Function:        mat_addsub_e1_O3
+Args:
+  - NumStackBytes:   '0'
+  - String:          ' stack bytes in function '''
+  - Function:        mat_addsub_e1_O3
+  - String:          ''''
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 39, Column: 5 }
+Function:        mat_add_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_add_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '2'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_add_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '2'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_add_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 41, Column: 28 }
+Function:        mat_add_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '7'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 39, Column: 31 }
+Function:        mat_add_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '7'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 39, Column: 5 }
+Function:        mat_add_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_add_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_add_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_add_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '5'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_add_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '4'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 41, Column: 28 }
+Function:        mat_add_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '12'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 39, Column: 31 }
+Function:        mat_add_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '7'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_add_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '2'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_add_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 41, Column: 28 }
+Function:        mat_add_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '7'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 39, Column: 31 }
+Function:        mat_add_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '7'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_add_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '5'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_add_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '4'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 41, Column: 28 }
+Function:        mat_add_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '12'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_add_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 41, Column: 28 }
+Function:        mat_add_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '7'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 39, Column: 31 }
+Function:        mat_add_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '9'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 44, Column: 1 }
+Function:        mat_add_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionCount
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 38, Column: 0 }
+Function:        mat_add_e1_O3
+Args:
+  - NumInstructions: '113'
+  - String:          ' instructions in function'
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 50, Column: 5 }
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '2'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '2'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 52, Column: 28 }
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '7'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 50, Column: 31 }
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '7'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 50, Column: 5 }
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '5'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '4'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 52, Column: 28 }
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '12'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 50, Column: 31 }
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '7'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '2'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 52, Column: 28 }
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '7'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 50, Column: 31 }
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '7'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '5'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '4'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 52, Column: 28 }
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '12'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 52, Column: 28 }
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '7'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 50, Column: 31 }
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '9'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 55, Column: 1 }
+Function:        mat_sub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionCount
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 49, Column: 0 }
+Function:        mat_sub_e1_O3
+Args:
+  - NumInstructions: '113'
+  - String:          ' instructions in function'
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 64, Column: 5 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '2'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 64, Column: 5 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '4'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 64, Column: 26 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 66, Column: 31 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '12'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 66, Column: 31 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '8'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 66, Column: 31 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '12'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 66, Column: 31 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '8'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 66, Column: 31 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '12'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 66, Column: 31 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '8'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 66, Column: 31 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '7'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 64, Column: 5 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '3'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 64, Column: 5 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '5'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '5'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 66, Column: 31 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '14'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 64, Column: 31 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '8'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '2'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 66, Column: 31 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '9'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 64, Column: 31 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '8'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '11'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '5'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 66, Column: 31 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '14'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 66, Column: 31 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '9'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 64, Column: 31 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '11'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionMix
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 72, Column: 1 }
+Function:        mat_addsub_e1_O3
+Args:
+  - String:          'BasicBlock: '
+  - BasicBlock:      ''
+  - String:          "\n"
+  - String:          ''
+  - String:          ': '
+  - INST_:           '1'
+  - String:          "\n"
+...
+--- !Analysis
+Pass:            asm-printer
+Name:            InstructionCount
+DebugLoc:        { File: 'src/kernel_e0.c', Line: 63, Column: 0 }
+Function:        mat_addsub_e1_O3
+Args:
+  - NumInstructions: '199'
+  - String:          ' instructions in function'
+...

@@ -1,0 +1,9 @@
+src/kernel_e0.c:40:9: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]
+   40 |         for (size_t j = 0; j < n; ++j) {
+      |         ^
+src/kernel_e0.c:51:9: remark: vectorized loop (vectorization width: 4, interleaved count: 4) [-Rpass=loop-vectorize]
+   51 |         for (size_t j = 0; j < n; ++j) {
+      |         ^
+src/kernel_e0.c:65:9: remark: vectorized loop (vectorization width: 4, interleaved count: 2) [-Rpass=loop-vectorize]
+   65 |         for (size_t j = 0; j < n; ++j) {
+      |         ^
