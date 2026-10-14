@@ -1,8 +1,8 @@
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 15, 0	sdk_version 15, 5
-	.globl	_mat_add_e4_d2048               ; -- Begin function mat_add_e4_d2048
+	.globl	_mat_add_e4_p0                  ; -- Begin function mat_add_e4_p0
 	.p2align	2
-_mat_add_e4_d2048:                      ; @mat_add_e4_d2048
+_mat_add_e4_p0:                         ; @mat_add_e4_p0
 	.cfi_startproc
 ; %bb.0:
 	mul	x8, x3, x3
@@ -14,26 +14,22 @@ _mat_add_e4_d2048:                      ; @mat_add_e4_d2048
 LBB0_2:
 	mov	x12, #0                         ; =0x0
 	add	x9, x2, #32
-	mov	x10, x0
-	mov	x11, x1
+	add	x10, x1, #32
+	add	x11, x0, #32
 LBB0_3:                                 ; =>This Inner Loop Header: Depth=1
-	prfm	pldl1strm, [x10, #8192]
-	prfm	pldl1strm, [x11, #8192]
-	ldp	q0, q1, [x10]
-	ldp	q2, q3, [x10, #32]
-	ldp	q4, q5, [x11]
+	ldp	q0, q1, [x11, #-32]
+	ldp	q2, q3, [x11], #64
+	ldp	q4, q5, [x10, #-32]
 	fadd.4s	v0, v0, v4
 	fadd.4s	v1, v1, v5
 	stnp	q0, q1, [x9, #-32]
-	ldp	q0, q1, [x11, #32]
+	ldp	q0, q1, [x10], #64
 	fadd.4s	v0, v2, v0
 	fadd.4s	v1, v3, v1
 	stnp	q0, q1, [x9]
 	add	x13, x12, #16
 	add	x14, x12, #32
 	add	x9, x9, #64
-	add	x11, x11, #64
-	add	x10, x10, #64
 	mov	x12, x13
 	cmp	x14, x8
 	b.ls	LBB0_3
@@ -56,9 +52,9 @@ LBB0_7:
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_mat_sub_e4_d2048               ; -- Begin function mat_sub_e4_d2048
+	.globl	_mat_sub_e4_p0                  ; -- Begin function mat_sub_e4_p0
 	.p2align	2
-_mat_sub_e4_d2048:                      ; @mat_sub_e4_d2048
+_mat_sub_e4_p0:                         ; @mat_sub_e4_p0
 	.cfi_startproc
 ; %bb.0:
 	mul	x8, x3, x3
@@ -70,26 +66,22 @@ _mat_sub_e4_d2048:                      ; @mat_sub_e4_d2048
 LBB1_2:
 	mov	x12, #0                         ; =0x0
 	add	x9, x2, #32
-	mov	x10, x0
-	mov	x11, x1
+	add	x10, x1, #32
+	add	x11, x0, #32
 LBB1_3:                                 ; =>This Inner Loop Header: Depth=1
-	prfm	pldl1strm, [x10, #8192]
-	prfm	pldl1strm, [x11, #8192]
-	ldp	q0, q1, [x10]
-	ldp	q2, q3, [x10, #32]
-	ldp	q4, q5, [x11]
+	ldp	q0, q1, [x11, #-32]
+	ldp	q2, q3, [x11], #64
+	ldp	q4, q5, [x10, #-32]
 	fsub.4s	v0, v0, v4
 	fsub.4s	v1, v1, v5
 	stnp	q0, q1, [x9, #-32]
-	ldp	q0, q1, [x11, #32]
+	ldp	q0, q1, [x10], #64
 	fsub.4s	v0, v2, v0
 	fsub.4s	v1, v3, v1
 	stnp	q0, q1, [x9]
 	add	x13, x12, #16
 	add	x14, x12, #32
 	add	x9, x9, #64
-	add	x11, x11, #64
-	add	x10, x10, #64
 	mov	x12, x13
 	cmp	x14, x8
 	b.ls	LBB1_3
@@ -112,9 +104,9 @@ LBB1_7:
 	ret
 	.cfi_endproc
                                         ; -- End function
-	.globl	_mat_addsub_e4_d2048            ; -- Begin function mat_addsub_e4_d2048
+	.globl	_mat_addsub_e4_p0               ; -- Begin function mat_addsub_e4_p0
 	.p2align	2
-_mat_addsub_e4_d2048:                   ; @mat_addsub_e4_d2048
+_mat_addsub_e4_p0:                      ; @mat_addsub_e4_p0
 	.cfi_startproc
 ; %bb.0:
 	mul	x8, x4, x4
@@ -127,15 +119,13 @@ LBB2_2:
 	mov	x13, #0                         ; =0x0
 	add	x9, x3, #32
 	add	x10, x2, #32
-	mov	x11, x1
-	mov	x12, x0
+	add	x11, x0, #32
+	add	x12, x1, #32
 LBB2_3:                                 ; =>This Inner Loop Header: Depth=1
-	prfm	pldl1strm, [x12, #8192]
-	prfm	pldl1strm, [x11, #8192]
-	ldp	q0, q1, [x12]
-	ldp	q2, q3, [x12, #32]
-	ldp	q4, q5, [x11]
-	ldp	q6, q7, [x11, #32]
+	ldp	q0, q1, [x11, #-32]
+	ldp	q2, q3, [x11], #64
+	ldp	q4, q5, [x12, #-32]
+	ldp	q6, q7, [x12], #64
 	fadd.4s	v16, v0, v4
 	fadd.4s	v17, v1, v5
 	stnp	q16, q17, [x10, #-32]
@@ -152,8 +142,6 @@ LBB2_3:                                 ; =>This Inner Loop Header: Depth=1
 	add	x15, x13, #32
 	add	x9, x9, #64
 	add	x10, x10, #64
-	add	x12, x12, #64
-	add	x11, x11, #64
 	mov	x13, x14
 	cmp	x15, x8
 	b.ls	LBB2_3

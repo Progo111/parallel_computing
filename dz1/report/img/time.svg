@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="420" font-family="sans-serif" font-size="12">
+<rect width="700" height="420" fill="white"/>
+<text x="350.0" y="20" text-anchor="middle" font-size="14">Время лучшего варианта этапа</text>
+<line x1="70" y1="365" x2="560" y2="365" stroke="black"/>
+<line x1="70" y1="40" x2="70" y2="365" stroke="black"/>
+<text x="70.0" y="383" text-anchor="middle">64</text>
+<text x="151.7" y="383" text-anchor="middle">128</text>
+<text x="233.3" y="383" text-anchor="middle">256</text>
+<text x="315.0" y="383" text-anchor="middle">512</text>
+<text x="396.7" y="383" text-anchor="middle">1024</text>
+<text x="478.3" y="383" text-anchor="middle">2048</text>
+<text x="560.0" y="383" text-anchor="middle">4096</text>
+<text x="315.0" y="412" text-anchor="middle">N</text>
+<line x1="70" y1="365.0" x2="560" y2="365.0" stroke="#dddddd"/>
+<text x="62" y="369.0" text-anchor="end">0.000499</text>
+<line x1="70" y1="283.8" x2="560" y2="283.8" stroke="#dddddd"/>
+<text x="62" y="287.8" text-anchor="end">0.00972</text>
+<line x1="70" y1="202.5" x2="560" y2="202.5" stroke="#dddddd"/>
+<text x="62" y="206.5" text-anchor="end">0.189</text>
+<line x1="70" y1="121.2" x2="560" y2="121.2" stroke="#dddddd"/>
+<text x="62" y="125.2" text-anchor="end">3.68</text>
+<line x1="70" y1="40.0" x2="560" y2="40.0" stroke="#dddddd"/>
+<text x="62" y="44.0" text-anchor="end">71.6</text>
+<text x="16" y="202.5" transform="rotate(-90 16 202.5)" text-anchor="middle">время, мс</text>
+<polyline points="70.0,268.3 151.7,229.2 233.3,191.5 315.0,153.6 396.7,115.7 478.3,77.9 560.0,40.0" fill="none" stroke="#888888" stroke-width="2"/>
+<circle cx="70.0" cy="268.3" r="3" fill="#888888"/>
+<circle cx="151.7" cy="229.2" r="3" fill="#888888"/>
+<circle cx="233.3" cy="191.5" r="3" fill="#888888"/>
+<circle cx="315.0" cy="153.6" r="3" fill="#888888"/>
+<circle cx="396.7" cy="115.7" r="3" fill="#888888"/>
+<circle cx="478.3" cy="77.9" r="3" fill="#888888"/>
+<circle cx="560.0" cy="40.0" r="3" fill="#888888"/>
+<polyline points="70.0,363.7 151.7,327.2 233.3,276.0 315.0,230.5 396.7,201.0 478.3,154.4 560.0,116.6" fill="none" stroke="#1f77b4" stroke-width="2"/>
+<circle cx="70.0" cy="363.7" r="3" fill="#1f77b4"/>
+<circle cx="151.7" cy="327.2" r="3" fill="#1f77b4"/>
+<circle cx="233.3" cy="276.0" r="3" fill="#1f77b4"/>
+<circle cx="315.0" cy="230.5" r="3" fill="#1f77b4"/>
+<circle cx="396.7" cy="201.0" r="3" fill="#1f77b4"/>
+<circle cx="478.3" cy="154.4" r="3" fill="#1f77b4"/>
+<circle cx="560.0" cy="116.6" r="3" fill="#1f77b4"/>
+<polyline points="70.0,365.0 151.7,327.2 233.3,274.4 315.0,230.6 396.7,196.5 478.3,154.5 560.0,116.4" fill="none" stroke="#2ca02c" stroke-width="2"/>
+<circle cx="70.0" cy="365.0" r="3" fill="#2ca02c"/>
+<circle cx="151.7" cy="327.2" r="3" fill="#2ca02c"/>
+<circle cx="233.3" cy="274.4" r="3" fill="#2ca02c"/>
+<circle cx="315.0" cy="230.6" r="3" fill="#2ca02c"/>
+<circle cx="396.7" cy="196.5" r="3" fill="#2ca02c"/>
+<circle cx="478.3" cy="154.5" r="3" fill="#2ca02c"/>
+<circle cx="560.0" cy="116.4" r="3" fill="#2ca02c"/>
+<polyline points="70.0,364.9 151.7,327.2 233.3,278.0 315.0,232.6 396.7,195.0 478.3,154.4 560.0,116.5" fill="none" stroke="#d62728" stroke-width="2"/>
+<circle cx="70.0" cy="364.9" r="3" fill="#d62728"/>
+<circle cx="151.7" cy="327.2" r="3" fill="#d62728"/>
+<circle cx="233.3" cy="278.0" r="3" fill="#d62728"/>
+<circle cx="315.0" cy="232.6" r="3" fill="#d62728"/>
+<circle cx="396.7" cy="195.0" r="3" fill="#d62728"/>
+<circle cx="478.3" cy="154.4" r="3" fill="#d62728"/>
+<circle cx="560.0" cy="116.5" r="3" fill="#d62728"/>
+<polyline points="70.0,362.9 151.7,327.3 233.3,274.6 315.0,239.0 396.7,198.8 478.3,155.7 560.0,117.6" fill="none" stroke="#9467bd" stroke-width="2"/>
+<circle cx="70.0" cy="362.9" r="3" fill="#9467bd"/>
+<circle cx="151.7" cy="327.3" r="3" fill="#9467bd"/>
+<circle cx="233.3" cy="274.6" r="3" fill="#9467bd"/>
+<circle cx="315.0" cy="239.0" r="3" fill="#9467bd"/>
+<circle cx="396.7" cy="198.8" r="3" fill="#9467bd"/>
+<circle cx="478.3" cy="155.7" r="3" fill="#9467bd"/>
+<circle cx="560.0" cy="117.6" r="3" fill="#9467bd"/>
+<line x1="570" y1="50" x2="594" y2="50" stroke="#888888" stroke-width="2"/>
+<text x="600" y="54">E0</text>
+<line x1="570" y1="68" x2="594" y2="68" stroke="#1f77b4" stroke-width="2"/>
+<text x="600" y="72">E1</text>
+<line x1="570" y1="86" x2="594" y2="86" stroke="#2ca02c" stroke-width="2"/>
+<text x="600" y="90">E2</text>
+<line x1="570" y1="104" x2="594" y2="104" stroke="#d62728" stroke-width="2"/>
+<text x="600" y="108">E3</text>
+<line x1="570" y1="122" x2="594" y2="122" stroke="#9467bd" stroke-width="2"/>
+<text x="600" y="126">E4</text>
+</svg>

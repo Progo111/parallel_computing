@@ -1,6 +1,4 @@
 build/
-bench
-bw_probe
 *.o
 *.dSYM/
 .DS_Store
